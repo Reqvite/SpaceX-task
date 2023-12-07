@@ -1,11 +1,11 @@
-import { createGlobalStyle } from "styled-components";
-
 import "modern-normalize";
+
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 
 body {
-    color: ${(p) => p.theme.colors.mainText};
+    color: ${(p) => p.theme.colors.mainColorDark};
  background-color: ${(p) => p.theme.colors.mainBackground};
   margin: 0;
   font-family: 'Syne', sans-serif;
@@ -55,5 +55,6 @@ a {
     border-radius: 5px;
   background-color: darkgrey;
 }
+
 
 `;

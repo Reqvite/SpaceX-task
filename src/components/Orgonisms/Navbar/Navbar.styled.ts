@@ -1,20 +1,20 @@
 // Import necessary modules from Styled Components
-import { ThemeType } from "@/global";
 import styled from "styled-components";
+
+import { ThemeType } from "@/global";
 
 type Theme = { theme: ThemeType };
 export const StyledHeader = styled.header<Theme>`
+z-index: 100;
+position: absolute;
+width: 100%;
+  height: ${({ theme }) => theme.sizes.navbarHeight};
+
+display: flex;
+justify-content: space-between;
+align-items: center;
   background-color: ${({ theme }) => theme.colors.headerBg};
   color: #fff;
   padding: 20px;
   text-align: center;
-`;
-
-export const Title = styled.h1`
-  font-size: 2em;
-  margin-bottom: 10px;
-`;
-
-export const Subtitle = styled.h2`
-  font-size: 1.5em;
 `;
