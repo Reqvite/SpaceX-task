@@ -9,8 +9,13 @@ type Theme = {
   isActive?: boolean;
 };
 export const CardListContainer = styled.section`
+  padding-top: 48px;
+  padding-bottom: 48px;
+
+    @media only screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
   padding-top: 96px;
   padding-bottom: 96px;
+  }
 `;
 export const CardList = styled.ul<Theme>`
   overflow: hidden;
