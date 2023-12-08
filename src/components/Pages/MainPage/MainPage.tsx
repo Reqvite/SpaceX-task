@@ -9,7 +9,7 @@ import { GET_TOUR_LIST } from '@/shared/query/tourList';
 import { useMainPage } from './useMainPage';
 
 const MainPage = () => {
-    const { data } = useQuery(GET_TOUR_LIST)
+    const { data, loading } = useQuery(GET_TOUR_LIST)
     const { cardData } = useMainPage(data, heroImgs)
     const {onFavoriteButtonClick} = useFavorites()
 
@@ -17,7 +17,7 @@ const MainPage = () => {
         <>
             <Banner withSlider title='The space is waiting for' desc="You" bottomText='Explore tours'/>
             <Container>
-                <CardsList list={cardData} title='Popular tours' onSecondaryButtonClick={onFavoriteButtonClick}/>
+                <CardsList isLoading={loading} list={cardData} title='Popular tours' onSecondaryButtonClick={onFavoriteButtonClick}/>
             </Container>
         </>
 

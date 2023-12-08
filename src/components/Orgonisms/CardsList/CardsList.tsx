@@ -16,10 +16,11 @@ import { BoxRelative, ButtonsBox, CardList, CardListContainer, CardTitle, Dot, D
 type CardsListProps = {
     title?: string;
     list: favoriteType[]
+    isLoading?: boolean;
     onSecondaryButtonClick: (item: favoriteType) => void;
 }
 
-export const CardsList = ({ list, title, onSecondaryButtonClick }: CardsListProps) => {
+export const CardsList = ({ list, title,isLoading, onSecondaryButtonClick }: CardsListProps) => {
     const { clearFavorites } = useFavorites()
     const isFavoritesPage = useIsPage('favorites')
     const cardsPerPage = 3;
@@ -44,7 +45,7 @@ export const CardsList = ({ list, title, onSecondaryButtonClick }: CardsListProp
     list.length
     return (
         <CardListContainer id="list">
-            {!list.length && <CardTitle>You dont add any favorites to your list.</CardTitle>}
+            {!list.length && !isLoading && <CardTitle>You dont add any favorites to your list.</CardTitle>}
             {list.length !== 0 && <BoxRelative>
                 <TopBox>
                     {title && <CardTitle>{title}</CardTitle>}
