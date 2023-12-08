@@ -1,7 +1,6 @@
 
 import { Container } from '@/components/Atoms';
-import { Banner } from '@/components/Orgonisms';
-import { CardsList } from '@/components/Orgonisms/CardsList/CardsList';
+import { Banner, CardsList } from '@/components/Orgonisms';
 import { useFavorites } from '@/shared/hooks/useFavorites';
 
 const FavoritePage = () => {

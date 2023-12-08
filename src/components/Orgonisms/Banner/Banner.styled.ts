@@ -1,4 +1,3 @@
-// Import necessary modules from Styled Components
 import styled from "styled-components";
 
 import { ThemeType } from "@/global";
@@ -7,9 +6,9 @@ type Theme = { theme: ThemeType; src: string; h?: number };
 export const StyledSection = styled.section<Theme>`
   position: relative;
 
-    padding-top: 30%;
-    padding-bottom: 3%;
-    height: auto;
+  padding-top: 30%;
+  padding-bottom: 3%;
+  height: auto;
 
   width: 100%;
   background-image: ${({ src }) => `url(${src})`};
@@ -17,15 +16,15 @@ export const StyledSection = styled.section<Theme>`
   background-size: cover;
   background-repeat: no-repeat;
 
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-         padding-top: 20%;
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    padding-top: 20%;
     padding-bottom: 3%;
     height: auto;
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.desk}) {
-  padding-top: 181px;
-  padding-bottom: 33px;
-  height: ${({ h = 740 }) => `${h}px`};
+    padding-top: 181px;
+    padding-bottom: 33px;
+    height: ${({ h = 740 }) => `${h}px`};
   }
 `;
 
@@ -46,44 +45,44 @@ export const Title = styled.h1`
 `;
 
 export const UpperText = styled.span<Pick<Theme, "theme">>`
-   font-size: 1rem;
+  font-size: 1rem;
   white-space: nowrap;
 
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-      font-size: 2rem
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: 2rem;
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.desk}) {
-   font-size: 48px;
+    font-size: 48px;
   }
 `;
 
 export const LowerText = styled.span`
   font-size: 3rem;
 
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-      font-size: 6rem;
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: 6rem;
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.desk}) {
-      font-size: 310px;
+    font-size: 310px;
   }
 `;
 
 export const Box = styled.div`
   position: absolute;
-      top: 130%;
-    left: 49%;
-    transform: translate(0, -49%);
+  top: 130%;
+  left: 49%;
+  transform: translate(0, -49%);
 
-        @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-            top: 111%;
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    top: 111%;
     left: 48%;
     transform: translate(0, -48%);
   }
-  
+
   @media (min-width: ${({ theme }) => theme.breakpoints.desk}) {
-      top: 57%;
-  left: 51%;
-  transform: translate(-57%, -51%);
+    top: 57%;
+    left: 51%;
+    transform: translate(-57%, -51%);
   }
 `;
 

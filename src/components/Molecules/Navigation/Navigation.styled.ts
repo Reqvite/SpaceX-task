@@ -1,4 +1,3 @@
-// Import necessary modules from Styled Components
 import styled from "styled-components";
 
 import { ThemeType } from "@/global";

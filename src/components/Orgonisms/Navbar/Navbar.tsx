@@ -6,7 +6,7 @@ import { theme } from "@/global";
 import { navbarLinks } from "@/shared/data/navbarLinks";
 import { useMediaQuery } from "@/shared/hooks/useMediaQuery";
 
-import { BurgerIcon, BurgerMenu,StyledHeader } from "./Navbar.styled";  // Добавленные стили и компоненты
+import { BurgerIcon, BurgerMenu,StyledHeader } from "./Navbar.styled"; 
 
 export const Navbar = () => {
     const isMobile = useMediaQuery(`(max-width: ${theme.breakpoints.tablet})`);

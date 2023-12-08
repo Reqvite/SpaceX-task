@@ -1,8 +1,7 @@
 import { useQuery } from '@apollo/client'
 
 import { Container } from '@/components/Atoms';
-import { Banner } from '@/components/Orgonisms';
-import { CardsList } from '@/components/Orgonisms/CardsList/CardsList';
+import { Banner, CardsList } from '@/components/Orgonisms';
 import { heroImgs } from '@/shared/data/heroImgs';
 import { useFavorites } from '@/shared/hooks/useFavorites';
 import { GET_TOUR_LIST } from '@/shared/query/tourList';
