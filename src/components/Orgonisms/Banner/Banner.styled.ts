@@ -10,8 +10,7 @@ export const StyledSection = styled.section<Theme>`
   height: auto;
 
   width: 100%;
-  background-image: ${({ src }) => `url(${src})`};
-  background-position: center;
+background-image: ${({ src }) => `linear-gradient(to bottom, #00000050 0%, #00000050 100%), url(${src})`};  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 
