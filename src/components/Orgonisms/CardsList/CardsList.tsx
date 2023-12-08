@@ -7,6 +7,7 @@ import ArrLeft from "@/shared/assets/icons/Arrow-Left.svg?react"
 import ArrRight from "@/shared/assets/icons/Arrow-right.svg?react"
 import { useFavorites } from '@/shared/hooks/useFavorites';
 import { useIsPage } from '@/shared/hooks/useIsPage';
+import { useMediaQuery } from '@/shared/hooks/useMediaQuery';
 import { favoriteType } from '@/shared/types/types';
 
 import { BoxRelative, ButtonsBox, CardList, CardListContainer, CardTitle, Dot, Dotlist, TopBox } from './CardList.styled';
@@ -23,6 +24,8 @@ export const CardsList = ({ list, title, onSecondaryButtonClick }: CardsListProp
     const isFavoritesPage = useIsPage('favorites')
     const cardsPerPage = 3;
     const totalSlides = Math.ceil(list.length / cardsPerPage);
+    const isMobile = useMediaQuery(`(max-width: ${theme.breakpoints.bigScreen})`);
+
   
     const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -50,8 +53,9 @@ export const CardsList = ({ list, title, onSecondaryButtonClick }: CardsListProp
                             ? <Button onClick={clearFavorites} width={44} height={44} bg={theme.colors.grayColor} clear={true}>Clear all</Button>
                             :
                             <>
-                                <Button onClick={handlePrev} width={44} height={44} bg={theme.colors.grayColor}><ArrLeft /></Button>
-                                <Button onClick={handleNext} width={44} height={44} bg={theme.colors.grayColor}><ArrRight /></Button>
+                                {!isMobile && <><Button onClick={handlePrev} width={44} height={44} bg={theme.colors.grayColor}><ArrLeft /></Button>
+                                    <Button onClick={handleNext} width={44} height={44} bg={theme.colors.grayColor}><ArrRight /></Button></>}
+                             
                             </>}
                     </ButtonsBox>
                 </TopBox>
@@ -62,7 +66,7 @@ export const CardsList = ({ list, title, onSecondaryButtonClick }: CardsListProp
                         ))}
                     </CardList>
                 </div>
-                <Dotlist>
+                {!isMobile && <Dotlist>
                     {Array.from({ length: totalSlides }, (_, index) => (
                         <Dot
                             key={index}
@@ -70,7 +74,7 @@ export const CardsList = ({ list, title, onSecondaryButtonClick }: CardsListProp
                             isActive={index === currentSlide}
                         />
                     ))}
-                </Dotlist>
+                </Dotlist>}
             </BoxRelative>}
         </CardListContainer>
     );

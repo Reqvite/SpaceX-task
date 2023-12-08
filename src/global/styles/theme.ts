@@ -26,6 +26,11 @@ export const theme = {
     },
     sizes: {
         navbarHeight: '80px'
+    },
+    breakpoints: {
+        bigScreen: '1330.98px',
+        desk: '1150.98px',
+        tablet: '776.98px',
     }
 };
 

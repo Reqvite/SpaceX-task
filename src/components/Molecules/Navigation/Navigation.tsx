@@ -8,7 +8,7 @@ type NavigationProps = {
     links: navbarLinkType[]
 }
 
-export const Navigation = ({links}: NavigationProps) => {
+export const Navigation = ({ links }: NavigationProps) => {
     return (
         <StyledNav >
             <StyledNavUl>

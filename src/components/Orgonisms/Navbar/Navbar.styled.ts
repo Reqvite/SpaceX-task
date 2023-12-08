@@ -18,3 +18,21 @@ export const StyledHeader = styled.header<Theme>`
   padding: 20px;
   text-align: center;
 `;
+
+export const BurgerIcon = styled.div`
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: auto;
+`;
+
+export const BurgerMenu = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  top: 60px;  
+  right: 10px;
+  background-color:  ${({ theme }) => theme.colors.headerBg};
+  padding: 20px;
+  z-index: 999;
+`;

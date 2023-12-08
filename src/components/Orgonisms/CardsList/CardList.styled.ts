@@ -15,7 +15,6 @@ export const CardListContainer = styled.section`
 export const CardList = styled.ul<Theme>`
   overflow: hidden;
   flex-wrap: nowrap;
-  width: 100%;
   display: flex;
   width: ${({ width }) => `${width}%`};
   gap: ${({ theme }) => `${theme.spacing[6]}`};
@@ -24,6 +23,13 @@ export const CardList = styled.ul<Theme>`
   margin: 0;
   transform: ${({ translateX }) => `translateX(${translateX})`};
   transition: transform 0.5s;
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.bigScreen}) {
+    flex-direction: column;
+    gap: ${({ theme }) => `${theme.spacing[4]}`};
+    align-items: center;
+    width: 100%;
+  }
 `;
 export const CardTitle = styled.h2`
   font-size: 32px;

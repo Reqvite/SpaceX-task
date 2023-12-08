@@ -8,4 +8,5 @@ export const Box = styled.div<Theme>`
   margin-left: auto;
   display: flex;
   gap: ${({ theme }) => theme.spacing[3]};
+  
 `;
