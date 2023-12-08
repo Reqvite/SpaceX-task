@@ -7,7 +7,6 @@ type SliderProps<T extends { id: number | string }> = {
   onChange: (idx: number, slide: T) => void;
     slides: T[];
     dotcolor?: string;
-      slidesPerRow: number;
 };
 
 export const Slider = <T extends { id: number | string }>({ slides, onChange, dotcolor, }: SliderProps<T>) => {

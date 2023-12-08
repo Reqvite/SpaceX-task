@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import { BrowserRouter } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 
 import { ApolloProvider } from '../ApolloProvider/ApolloProvider';
 import { ThemeProvider } from '../ThemeProvider/ThemeProvider'
@@ -11,11 +12,13 @@ type AppProvidersProps = {
 export const AppProviders = ({children}: AppProvidersProps) => {
     return (
         <BrowserRouter>
-            <ApolloProvider>
-                <ThemeProvider>
-                    {children}
-                </ThemeProvider>
-            </ApolloProvider>
+            <RecoilRoot>
+                <ApolloProvider>
+                    <ThemeProvider>
+                        {children}
+                    </ThemeProvider>
+                </ApolloProvider>
+            </RecoilRoot>
         </BrowserRouter>
     )
 }

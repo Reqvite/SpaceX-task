@@ -5,7 +5,7 @@ import { Box } from "./NavigationButtons.styled";
 export const NavigationButtons = () => {
     return (
         <Box>
-            <LikeBtn/>
+            <LikeBtn isLink={true} href="/favorites"/>
             <Button>Sign in</Button>
         </Box>
     )

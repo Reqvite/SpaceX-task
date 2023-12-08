@@ -8,3 +8,14 @@ export type heroImg = {
     src: string;
     alt: string;
 }
+
+export type favoriteType = {
+    id: number | string;
+    src: string;
+    name: string;
+    description: string;
+}
+
+export type rocketsType = {
+    rockets: favoriteType[]
+}

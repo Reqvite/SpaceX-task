@@ -1,7 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { theme } from '@/global';
-
+import { theme } from "@/global";
 
 export const DotsContainer = styled.ul`
   bottom: 10px;
@@ -14,8 +13,8 @@ export const DotsContainer = styled.ul`
 `;
 
 type DotProps = {
-    active: boolean;
-    dotcolor?: string;
+  active: boolean;
+  dotcolor?: string;
 };
 
 export const Dot = styled.li<DotProps>`
@@ -25,9 +24,11 @@ export const Dot = styled.li<DotProps>`
   border: 2px solid ${({ dotcolor = theme.colors.whiteColor }) => dotcolor};
   border-radius: 50%;
   background: ${({ active, theme }) =>
-        active ? `radial-gradient(circle, ${theme.colors.whiteColor} 40%, transparent 40%, transparent)` : 'transparent'};
+        active
+            ? `radial-gradient(circle, ${theme.colors.whiteColor} 40%, transparent 40%, transparent)`
+            : "transparent"};
   margin: 0 5px;
-  
+
   transition: background-color 0.3s ease, padding 0.3s ease;
 
   &:hover {

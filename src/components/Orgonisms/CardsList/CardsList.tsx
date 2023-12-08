@@ -5,16 +5,22 @@ import { Card } from '@/components/Molecules';
 import { theme } from '@/global';
 import ArrLeft from "@/shared/assets/icons/Arrow-Left.svg?react"
 import ArrRight from "@/shared/assets/icons/Arrow-right.svg?react"
+import { useFavorites } from '@/shared/hooks/useFavorites';
+import { useIsPage } from '@/shared/hooks/useIsPage';
+import { favoriteType } from '@/shared/types/types';
 
 import { BoxRelative, ButtonsBox, CardList, CardListContainer, CardTitle, Dot, Dotlist, TopBox } from './CardList.styled';
 
 
 type CardsListProps = {
     title?: string;
-    list: any[]
+    list: favoriteType[]
+    onSecondaryButtonClick: (item: favoriteType) => void;
 }
 
-export const CardsList = ({ list, title }: CardsListProps) => {
+export const CardsList = ({ list, title, onSecondaryButtonClick }: CardsListProps) => {
+    const { clearFavorites } = useFavorites()
+    const isFavoritesPage = useIsPage('favorites')
     const cardsPerPage = 3;
     const totalSlides = Math.ceil(list.length / cardsPerPage);
   
@@ -32,20 +38,27 @@ export const CardsList = ({ list, title }: CardsListProps) => {
         setCurrentSlide(index);
     };
 
+    list.length
     return (
-        <CardListContainer>
-            <BoxRelative>
+        <CardListContainer id="list">
+            {!list.length && <CardTitle>You dont add any favorites to your list.</CardTitle>}
+            {list.length !== 0 && <BoxRelative>
                 <TopBox>
                     {title && <CardTitle>{title}</CardTitle>}
-                    <ButtonsBox>
-                        <Button onClick={handlePrev}  width={44} height={44} bg={theme.colors.grayColor}><ArrLeft /></Button>
-                        <Button  onClick={handleNext} width={44} height={44} bg={theme.colors.grayColor}><ArrRight/></Button>
+                    <ButtonsBox style={{marginLeft: 'auto'}}>
+                        {isFavoritesPage
+                            ? <Button onClick={clearFavorites} width={44} height={44} bg={theme.colors.grayColor} clear={true}>Clear all</Button>
+                            :
+                            <>
+                                <Button onClick={handlePrev} width={44} height={44} bg={theme.colors.grayColor}><ArrLeft /></Button>
+                                <Button onClick={handleNext} width={44} height={44} bg={theme.colors.grayColor}><ArrRight /></Button>
+                            </>}
                     </ButtonsBox>
                 </TopBox>
                 <div style={{ overflow: 'hidden' }}>
                     <CardList translateX={`-${currentSlide * (100 / totalSlides)}%`} width={totalSlides * 100}>
                         {list.map((item) => (
-                            <Card key={item.id} {...item.rocket} src={item.src} />
+                            <Card onSecondaryButtonClick={onSecondaryButtonClick} key={item.id} {...item} />
                         ))}
                     </CardList>
                 </div>
@@ -58,7 +71,7 @@ export const CardsList = ({ list, title }: CardsListProps) => {
                         />
                     ))}
                 </Dotlist>
-            </BoxRelative>
+            </BoxRelative>}
         </CardListContainer>
     );
 };

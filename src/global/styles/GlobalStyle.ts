@@ -4,6 +4,9 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 
+html {
+    scroll-behavior: smooth;
+}
 body {
     color: ${(p) => p.theme.colors.mainColorDark};
  background-color: ${(p) => p.theme.colors.mainBackground};

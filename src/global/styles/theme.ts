@@ -6,6 +6,7 @@ export const theme = {
         mainColorDark: "#1E1E1E",
         secondaryColorDark: "#556B84",
         accentColor: "#D3EAFF",
+        hoverColor: "#93bee6",
         grayColor: "#ECECEC",
         whiteColor: "#FFF",
         blackColor: "#000",

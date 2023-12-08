@@ -12,9 +12,12 @@ export const Navigation = ({links}: NavigationProps) => {
     return (
         <StyledNav >
             <StyledNavUl>
-                {links.map((link, idx) => <AppLink key={idx} to={link.href}>
-                    {link.title}
-                </AppLink>)}
+                {links.map((link, idx) =>
+                    <li key={idx}>
+                        <AppLink to={link.href}>
+                            {link.title}
+                        </AppLink>
+                    </li>)}
             </StyledNavUl>
         </StyledNav>
     )

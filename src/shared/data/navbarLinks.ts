@@ -5,7 +5,7 @@ export const navbarLinks = [
     },
     {
         title: 'Tours',
-        href: '/'
+        href: '#'
     },
     {
         title: 'About',

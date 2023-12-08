@@ -4,15 +4,14 @@ import { ThemeType } from "@/global";
 
 type Theme = { theme: ThemeType };
 export const CardContainer = styled.li<Theme>`
-max-width: 411px;
+  max-width: 411px;
   width: 100%;
-height: 572px;
-  background-color: ${({theme}) => theme.colors.mainBgColorLight};
-  border: 1px solid ${({theme}) => theme.colors.accentColor};
-
+  height: 572px;
+  background-color: ${({ theme }) => theme.colors.mainBgColorLight};
+  border: 1px solid ${({ theme }) => theme.colors.accentColor};
 `;
 export const CardContent = styled.div<Theme>`
-  padding: ${({ theme }) => theme.spacing[8]} ;
+  padding: ${({ theme }) => theme.spacing[8]};
   padding-bottom: ${({ theme }) => theme.spacing[6]};
 `;
 
@@ -23,10 +22,10 @@ export const CardImage = styled.img`
 `;
 
 export const CardTitle = styled.h3`
-text-align: center;
-font-size: 24px;
-font-weight: 700;
-text-transform: uppercase;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
 `;
 
 export const CardDescription = styled.p<Theme>`
@@ -46,8 +45,7 @@ export const CardDescription = styled.p<Theme>`
 `;
 
 export const Box = styled.div<Theme>`
-margin-top: 64px;
-display: flex;
+  margin-top: 64px;
+  display: flex;
   gap: ${({ theme }) => theme.spacing[3]};
-
 `;
