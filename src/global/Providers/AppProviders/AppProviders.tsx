@@ -5,7 +5,6 @@ import { RecoilRoot } from 'recoil';
 import { ApolloProvider } from '../ApolloProvider/ApolloProvider';
 import { ThemeProvider } from '../ThemeProvider/ThemeProvider'
 
-
 type AppProvidersProps = {
     children: ReactNode
 }

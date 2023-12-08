@@ -4,8 +4,8 @@ import { Banner, CardsList } from '@/components/Orgonisms';
 import { useFavorites } from '@/shared/hooks/useFavorites';
 
 const FavoritePage = () => {
-    const {favorites, onFavoriteButtonClick} = useFavorites()
-
+    const { favorites, onFavoriteButtonClick } = useFavorites()
+    
     return (
         <>
             <Banner title='Favorites' h={440}/>

@@ -4,7 +4,6 @@ import { AppRouter } from "@/global";
 function App() {
     return (
         <>
-        
             <Navbar />
             <main>
                 <AppRouter />
