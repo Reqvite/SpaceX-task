@@ -5,7 +5,6 @@ import { ThemeType } from "@/global";
 type Theme = { theme: ThemeType; src: string; h?: number };
 export const StyledSection = styled.section<Theme>`
   position: relative;
-
   padding-top: 30%;
   padding-bottom: 3%;
   height: auto;
@@ -26,6 +25,7 @@ export const StyledSection = styled.section<Theme>`
     padding-bottom: 33px;
     height: ${({ h = 740 }) => `${h}px`};
   }
+    background-color: ${({ theme }) => theme.colors.headerBg};
 `;
 
 export const RelativeBox = styled.div`
